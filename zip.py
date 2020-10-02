@@ -196,7 +196,6 @@ def main():
                         cell.fill = PatternFill(fgColor="0080FF00", fill_type="solid")
                     if (prevsymbol.lower()) == "deny":
                         cell.fill = PatternFill(fgColor="00FF3333", fill_type="solid")
-        load_spreadsheet.create_sheet(index =1, title = "CPC ZONES chart")
         load_spreadsheet.save(ss)
     def app_name(ss):
         load_spreadsheet = openpyxl.load_workbook(ss)
