@@ -13,4 +13,4 @@ Hacktoberfest_Expected_Outcome.xlsx
 Hackoberfest_Database.slsx 
 
 
-# Raise a PR and get a Hacktoberfest T-Shirt
+# Raise a PR and get Hacktoberfest T-Shirt :smile: 
