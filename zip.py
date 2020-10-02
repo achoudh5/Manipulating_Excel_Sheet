@@ -10,8 +10,6 @@ def main():
         sheet = load_spreadsheet['Sheet1']  # Get a sheet from the workbook
         for row in sheet.iter_cols(min_col=4, min_row=2, max_col=6,
                                    max_row=100):  # iterate through all rows in specific column
-
-
             # correct this loop, eliminate checking the column E
             for i in range(2,101):
                 if row==('Sheet1.E'+str(i)):
@@ -25,6 +23,7 @@ def main():
                             for i in cell.value.split(','):
                                 i = i.strip()
                                 #color the zone as per following mapping:- column A color for Column D and Column B color for Column F
+                                # input read_color_from_column by reading column A color for Column D and Column B color for Column F
                                 color_ip(read_color_from_column,cell) #calling the function color_ip
                     elif cell.value==None:
                         pass
@@ -34,9 +33,11 @@ def main():
                             for i in cell.value.split('\n'):
                                 i = i.strip()
                                 #color the zone as per following mapping:- column A color for Column D and Column B color for Column F
+                                #input read_color_from_column by reading column A color for Column D and Column B color for Column F
                                 color_ip(read_color_from_column,cell) #calling the function color_ip
-                except AttributeError:)
+                except AttributeError:
                     # color the zone as per following mapping:- column A color for Column D and Column B color for Column F
+                    # input read_color_from_column by reading column A color for Column D and Column B color for Column F
                     color_ip(read_color_from_column, cell)  # calling the function color_ip
                 except ValueError:
                     break
