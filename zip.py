@@ -20,25 +20,25 @@ def main():
     #a.b.c.d-> ip format
     #Sheet1 subnets
     ab=1.2
-    c_green_ash=[0,1,2,3,4,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,91,92,93,94,96,97,98,99,100,101,102,103,104,108]
-    d_green_41_95_start_ash=128
-    d_green_41_95_end_ash=255
-    c_grey_ash = [42, 43, 120, 121]
-    d_grey_44_start_ash=0
-    d_grey_44_end_ash=159
-    d_grey_122_start_ash=0
-    d_grey_122_end_ash=95
-    c_yellow_ash = [11, 12, 89, 90]
+    c_green_a=[0,1,2,3,4,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,91,92,93,94,96,97,98,99,100,101,102,103,104,108]
+    d_green_41_95_start_a=128
+    d_green_41_95_end_a=255
+    c_grey_a = [42, 43, 120, 121]
+    d_grey_44_start_a=0
+    d_grey_44_end_a=159
+    d_grey_122_start_a=0
+    d_grey_122_end_a=95
+    c_yellow_a = [11, 12, 89, 90]
     #Sheet2 subnets
-    c_green_dal=[141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,169]
-    d_green_169_start_dal=0
-    d_green_169_end_dal=127
-    c_grey_dal= [170,171,172]
-    d_grey_172_1_start_dal=0
-    d_grey_172_1_end_dal=63
-    d_grey_172_2_start_dal = 128
-    d_grey_172_2_end_dal = 159
-    c_yellow_dal= [139,140]
+    c_green_b=[141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,169]
+    d_green_169_start_b=0
+    d_green_169_end_b=127
+    c_grey_b= [170,171,172]
+    d_grey_172_1_start_b=0
+    d_grey_172_1_end_b=63
+    d_grey_172_2_start_b = 128
+    d_grey_172_2_end_b = 159
+    c_yellow_b= [139,140]
     bluezone=['bluezone','Bluezone']
     # Use valid_ip.py in repo as module and import it in this script. Use OOPs concepts to eliminate below function
     def is_valid(ip):
@@ -88,13 +88,13 @@ def main():
                 except ValueError:
                     break
         load_spreadsheet.save(ss)
-    def check_zone_ip_relationship(inp_ip,inp): #checking which zone does the ip belongs to based on the excel sheet at https://ibm.ent.box.com/file/696792384846?s=o7b6l70g2iccwv2c28z9rg427jo03gaq
+    def check_zone_ip_relationship(inp_ip,inp): #checking which zone does the ip belongs to based on the excel sheet at Hacktoberfest_database.xlsx
         ss=os.path.join(os.path.dirname(__file__),'Hacktoberfest_database.xlsx')
         load_spreadsheet = openpyxl.load_workbook(ss)
-        ashburn_sheet = load_spreadsheet['Sheet1']  # Get a sheet from the workbook
-        dallas_sheet = load_spreadsheet['Sheet2']  # Get a sheet from the workbook
+        a_sheet = load_spreadsheet['Sheet1']  # Get a sheet from the workbook
+        b_sheet = load_spreadsheet['Sheet2']  # Get a sheet from the workbook
         if inp.lower()=='sheet1' or inp=='1': #checking if it's Sheet1 or sheet2
-            for row in ashburn_sheet.iter_cols(min_col=1, min_row=4, max_col=4,max_row=100):  # iterate through all rows in specific column
+            for row in a_sheet.iter_cols(min_col=1, min_row=4, max_col=4,max_row=100):  # iterate through all rows in specific column
                 for cell in row:
                     if cell.value!=None:
                         if '/' not in inp_ip:
@@ -107,27 +107,27 @@ def main():
                         elif inp_ip in bluezone or float(abcd[0] + '.' + abcd[1]) != ab:
                             return ('blue')
                         elif float(abcd[0]+'.'+abcd[1])==ab:
-                            if int(abcd[2]) in c_green_ash:
+                            if int(abcd[2]) in c_green_a:
                                 return ('green')
-                            elif int(abcd[2]) in c_grey_ash:
+                            elif int(abcd[2]) in c_grey_a:
                                 return ('grey')
-                            elif int(abcd[2]) in c_yellow_ash:
+                            elif int(abcd[2]) in c_yellow_a:
                                 return ('yellow')
                             elif int(abcd[2])==int('41') or int(abcd[2])==int('95'):
-                                if int(abcd[3]) in range(d_green_41_95_start_ash,d_green_41_95_end_ash+1):
+                                if int(abcd[3]) in range(d_green_41_95_start_a,d_green_41_95_end_a+1):
                                     return ('green')
                             elif int(abcd[2])==int(44):
-                                for i in range(d_grey_44_start_ash, d_grey_44_end_ash+1):
+                                for i in range(d_grey_44_start_a, d_grey_44_end_a+1):
                                     if i == int(abcd[3]):
                                         return ('grey')
                             elif int(abcd[2])==int(122):
-                                for i in range(d_grey_122_start_ash,d_grey_122_end_ash+1):
+                                for i in range(d_grey_122_start_a,d_grey_122_end_a+1):
                                     if i==int(abcd[3]):
                                         return ('grey')
 
 
         if inp.lower()=='sheet2' or inp=='2': #checking if it's Sheet1 or sheet2
-            for row in dallas_sheet.iter_cols(min_col=1, min_row=4, max_col=4,max_row=100):  # iterate through all rows in specific column
+            for row in b_sheet.iter_cols(min_col=1, min_row=4, max_col=4,max_row=100):  # iterate through all rows in specific column
                 for cell in row:
                     if cell.value != None:
                         if '/' not in inp_ip:
@@ -139,20 +139,20 @@ def main():
                             return ('blue')
                         else:
                             if float(abcd[0] + '.' + abcd[1]) == ab:
-                                if int(abcd[2]) in c_green_dal:
+                                if int(abcd[2]) in c_green_b:
                                     return ('green')
-                                elif int(abcd[2]) in c_grey_dal:
+                                elif int(abcd[2]) in c_grey_b:
                                     return ('grey')
-                                elif int(abcd[2]) in c_yellow_dal:
+                                elif int(abcd[2]) in c_yellow_b:
                                     return ('yellow')
                                 elif int(abcd[2]) == int('169'):
-                                    if int(abcd[3]) in range(d_green_169_start_dal, d_green_169_end_dal + 1):
+                                    if int(abcd[3]) in range(d_green_169_start_b, d_green_169_end_b + 1):
                                         return ('green')
                                 elif int(abcd[2]) == int(172):
-                                    for i in range(d_grey_172_1_start_dal, d_grey_172_1_end_dal + 1):
+                                    for i in range(d_grey_172_1_start_b, d_grey_172_1_end_b + 1):
                                         if i == int(abcd[3]):
                                             return ('grey')
-                                    for i in range(d_grey_172_2_start_dal, d_grey_172_2_end_dal + 1):
+                                    for i in range(d_grey_172_2_start_b, d_grey_172_2_end_b + 1):
                                         if i == int(abcd[3]):
                                             return ('grey')
     def color_ip(prevsymbol,cell): #colors the ip based on zone
