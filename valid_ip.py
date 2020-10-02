@@ -1,7 +1,11 @@
 import openpyxl
 import ipaddress  # included in Python 3
 
-wb = openpyxl.load_workbook('C:/Users/Lenovo/Downloads/Hacktoberfest.xlsx')
+i=input('Enter the name of file:\nMake sure the file is in the same folder as this python file, \
+otherwise input the file address as "C:/Users/Lenovo/Downloads/workbook.xlsx"\n')
+
+wb = openpyxl.load_workbook(i)
+
 ws = wb['Sheet1']
 
 # function to validate a IP address.
@@ -12,19 +16,36 @@ def is_valid(ip):
     except ValueError:
         return False
 
-# for processing the string
+# for processing the string before validating.
 def process(s):
     
-    # removes everything except full stops and numbers.
+    # removing delimeters and commas.
     for idx, k in enumerate(s):
-
-        if not (k == '.' or k.isnumeric()):
-
+        if k=='\n' or k==',':
             s = s[:idx] + " " + s[idx + 1:]
+    s = s.split()
+        
+    # removes everything except full stops and numbers.
+    for index, i in enumerate(s):
+        for idx, k in enumerate(i):
+            if not (k == '.' or k.isnumeric()):
+                s[index] = s[index][:idx] + " " + s[index][idx + 1:]
 
-    s = s.replace(" ","")
+        s[index] = s[index].replace(" ","")
     
     return(s)
+
+# for processing the IP addresses just before adding them 
+# to the dictionary.
+def add_process(s):
+    
+    # removing delimeters and commas.
+    for idx, k in enumerate(s):
+        if k=='\n' or k==',':
+            s = s[:idx] + " " + s[idx + 1:]
+    s = s.split()
+    
+    return(', '.join(s))
 
 # Driving Code
 if __name__ == "__main__":
@@ -49,17 +70,20 @@ if __name__ == "__main__":
             if ws[i][j].value:
 
                 s = process(ws[i][j].value)
-
-                if not is_valid(s):
-                    found = True
-                    break
+                
+                for k in s:
+                    if not is_valid(k):
+                        found = True
+                        break
+                if found: break
+                    
             else:
                 found = True
  
         if not found:
             dic = {}
             for j in col:
-                dic[ws[1][j].value] = ws[i][j].value
+                dic[add_process(ws[1][j].value)] = add_process(ws[i][j].value)
             lis.append(dic)
 
     print(lis)
