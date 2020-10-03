@@ -10,6 +10,7 @@
   - Being a **Network Security Professional**, I am currently working on this exciting project which makes the NetOps work easy
   - Challenge is to make the users use a tool which is easy to navigate considering they don't have software mindset! 
   - Think like a **Noob**, there are no assumptions for this project :)
+  - Convey your message with minimal Knowledge transfer
   - I am all ears to suggestions, don't hesitate to suggest
   
 # All files below are samples only
