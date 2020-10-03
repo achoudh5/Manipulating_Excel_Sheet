@@ -13,6 +13,7 @@
 import os
 import ipaddress
 import openpyxl
+import valid_ip #imported module valid_ip.py
 from openpyxl.styles import PatternFill, Font
 from openpyxl.styles import *
 from openpyxl.utils.cell import get_column_letter
@@ -41,17 +42,11 @@ def main():
     c_yellow_b= [139,140]
     bluezone=['bluezone','Bluezone']
     # Use valid_ip.py in repo as module and import it in this script. Use OOPs concepts to eliminate below function
-    def is_valid(ip):
-        try:
-            ipaddress.IPv4Network(ip)
-            return True
-        except ValueError:
-            return False
+   
     def parse_user_input(ss): #parses the source and destination ip's from the user's spreadsheet
         load_spreadsheet = openpyxl.load_workbook(ss)
         sheet = load_spreadsheet['Sheet1']  # Get a sheet from the workbook
-        for row in sheet.iter_cols(min_col=4, min_row=2, max_col=6,
-                                   max_row=100):  # iterate through all rows in specific column
+        for row in sheet.iter_cols(min_col=4, min_row=2, max_col=6,max_row=100):  # iterate through all rows in specific column
             #print (type(row))
             for i in range(2,101):
                 if row==('Sheet1.E'+str(i)):
@@ -67,7 +62,7 @@ def main():
                             for i in cell.value.split(','):
                                 i = i.strip()
                                 #cell_values.append(str(i))
-                                if is_valid(i):
+                                if valid_ip.is_valid(i):
                                     returned_zone=check_zone_ip_relationship(i,inp)
                                     color_ip(returned_zone,cell) #calling the function color_ip
                     elif cell.value==None:
@@ -78,7 +73,7 @@ def main():
                                 i = i.strip()
                                 #print ('input'+i)
                                 #print (inp)
-                                if is_valid(i):
+                                if valid_ip.is_valid(i):
                                     returned_zone=check_zone_ip_relationship(i,inp)
                                 #print (returned_zone)
                                     color_ip(returned_zone,cell)
