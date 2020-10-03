@@ -16,3 +16,4 @@ Hackoberfest_Database.slsx
 
 # Raise a PR and get [Hacktoberfest 2020](https://hacktoberfest.digitalocean.com/) T-Shirt :smile: 
 # Thank you for your contribution :clap:
+# Do Star :star: this repository
