@@ -24,7 +24,22 @@ def process(s):
         if k=='\n' or k==',':
             s = s[:idx] + " " + s[idx + 1:]
     s = s.split()
+    
+    # for processing the networks like "12.34.54.67/34"
+    for index, i in enumerate(s):
         
+        # for counting the number of full stops (must be 3) before
+        # removing the slash "/" and post string.
+        count=0
+        for idx, k in enumerate(i):
+            if k==".":
+                count+=1
+            if count==3 and k=="/":
+                count=-1
+                break
+        if count==-1:
+            s[index] = s[index][:idx]
+    
     # removes everything except full stops and numbers.
     for index, i in enumerate(s):
         for idx, k in enumerate(i):
@@ -50,7 +65,7 @@ def add_process(s):
 # Driving Code
 if __name__ == "__main__":
     
-    col=[0,2]   # INPUT. A list containing the indices of the
+    col=[3,5]   # INPUT. A list containing the indices of the
                 # columns, which needs to be checked for the
                 # IP adresses.
 
@@ -85,5 +100,7 @@ if __name__ == "__main__":
             for j in col:
                 dic[add_process(ws[1][j].value)] = add_process(ws[i][j].value)
             lis.append(dic)
-
+    
+    print(" ")
+    
     print(lis)
