@@ -12,10 +12,10 @@
 import os
 import ipaddress
 import openpyxl
+import valid_ip #imported module valid_ip.py
 from openpyxl.styles import PatternFill, Font
 # from openpyxl.styles import *
 from openpyxl.utils.cell import get_column_letter
-
 ab=1.2
 c_green_a=[0,1,2,3,4,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,91,92,93,94,96,97,98,99,100,101,102,103,104,108]
 c_grey_a = [42, 43, 120, 121]
@@ -110,6 +110,7 @@ def check_zone_ip_relationship(inp_ip,inp):
                         
                         if int(abcd[2])==int('41') or int(abcd[2])==int('95'):
                             if int(abcd[3]) in range(d_green_41_95_start_a,d_green_41_95_end_a+1):
+
                                 return ('green')
                         elif int(abcd[2])==int(44):
                             for i in range(d_grey_44_start_a, d_grey_44_end_a+1):
