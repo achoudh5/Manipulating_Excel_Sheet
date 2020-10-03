@@ -12,11 +12,13 @@
 import os
 import ipaddress
 import openpyxl
-import valid_ip #imported module valid_ip.py
+import valid_ip
 from openpyxl.styles import PatternFill, Font
-# from openpyxl.styles import *
 from openpyxl.utils.cell import get_column_letter
+
 ab=1.2
+
+#Sheet1 subnets
 c_green_a=[0,1,2,3,4,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,91,92,93,94,96,97,98,99,100,101,102,103,104,108]
 c_grey_a = [42, 43, 120, 121]
 c_yellow_a = [11, 12, 89, 90]
@@ -87,12 +89,12 @@ def check_zone_ip_relationship(inp_ip,inp):
     """
     ss=os.path.join(os.path.dirname(__file__),'Hacktoberfest_database.xlsx')
     load_spreadsheet = openpyxl.load_workbook(ss)
-    a_sheet = load_spreadsheet['Sheet1']  # Get a sheet from the workbook
-    b_sheet = load_spreadsheet['Sheet2']  # Get a sheet from the workbook
+    a_sheet = load_spreadsheet['Sheet1']  # Get Sheet1 from the workbook
+    b_sheet = load_spreadsheet['Sheet2']  # Get Sheet2 from the workbook
     
     if inp.lower()=='sheet1' or inp=='1': 
         # Operations for sheet 1
-        for row in a_sheet.iter_cols(min_col=1, min_row=4, max_col=4,max_row=100):  # iterate through all rows in specific column
+        for row in a_sheet.iter_cols(min_col=1, min_row=4, max_col=4,max_row=100):
             for cell in row:
                 if cell.value!=None:
                     if '/' not in inp_ip:
@@ -124,7 +126,7 @@ def check_zone_ip_relationship(inp_ip,inp):
 
     if inp.lower()=='sheet2' or inp=='2': 
         # Operations for sheet 2
-        for row in b_sheet.iter_cols(min_col=1, min_row=4, max_col=4,max_row=100):  # iterate through all rows in specific column
+        for row in b_sheet.iter_cols(min_col=1, min_row=4, max_col=4,max_row=100):
             for cell in row:
                 if cell.value != None:
                     if '/' not in inp_ip:
@@ -158,16 +160,12 @@ def parse_user_input(ss):
     Output: None (Saves spreadsheet)
     """
     load_spreadsheet = openpyxl.load_workbook(ss)
-    sheet = load_spreadsheet['Sheet1']  # Get a sheet from the workbook
-    for row in sheet.iter_cols(min_col=4, min_row=2, max_col=6,
-                                max_row=100):  # iterate through all rows in specific column
-        #print (type(row))
+    sheet = load_spreadsheet['Sheet1']  # Get Sheet1 from the workbook
+    for row in sheet.iter_cols(min_col=4, min_row=2, max_col=6, max_row=100):
         for i in range(2,101):
             if row==('Sheet1.E'+str(i)):
-                #print (row)
                 pass
         for cell in row:
-            #print (type(cell.value))
             try:
                 if (cell.value)==None:
                     pass
@@ -175,21 +173,17 @@ def parse_user_input(ss):
                     if cell.value.split(','):
                         for i in cell.value.split(','):
                             i = i.strip()
-                            #cell_values.append(str(i))
                             if is_valid(i):
                                 returned_zone=check_zone_ip_relationship(i,inp)
-                                color_ip(returned_zone,cell) #calling the function color_ip
+                                color_ip(returned_zone,cell)
                 elif cell.value==None:
                     pass
                 else:
                     if cell.value.split('\n'):
                         for i in cell.value.split('\n'):
                             i = i.strip()
-                            #print ('input'+i)
-                            #print (inp)
                             if is_valid(i):
                                 returned_zone=check_zone_ip_relationship(i,inp)
-                            #print (returned_zone)
                                 color_ip(returned_zone,cell)
             except AttributeError:
                 returned_zone=check_zone_ip_relationship((cell.value),inp)
@@ -199,7 +193,13 @@ def parse_user_input(ss):
     load_spreadsheet.save(ss)
 
 def color_ip(prevsymbol,cell): 
-    #colors the ip based on zone
+    """
+    colors the ip based on zone
+    Input: 
+    prevsymbol: The symbol
+    cell: The cell to be filled
+    Output: None
+    """
     if prevsymbol != None:
         if (prevsymbol.lower()) == "green":
             cell.fill = PatternFill(fgColor="0080FF00", fill_type="solid")
@@ -219,6 +219,8 @@ def color_ip(prevsymbol,cell):
 def zone(ss):
     """
     Coloring function for zone.
+    Input: Spreadsheet
+    Output: None (Saves spreadsheet)
     """
     load_spreadsheet = openpyxl.load_workbook(ss)
     sheet = load_spreadsheet['Sheet1']  # Get a sheet from the workbook
@@ -242,13 +244,14 @@ def zone(ss):
 def app_name(ss):
     """
     Coloring function based on app name.
+    Input: Spreadsheet
+    Output: None (Saves spreadsheet)
     """
     load_spreadsheet = openpyxl.load_workbook(ss)
-    sheet = load_spreadsheet['Sheet1']  # Get a sheet from the workbook
+    sheet = load_spreadsheet['Sheet1']  # Get Sheet1 from the workbook
     app_values=[]
     for row in sheet.iter_cols(min_col=9, min_row=2, max_col=9, max_row=100):  
-        # iterate through all rows in specific column
-        for cell in row: #add all the apps in a list app_values using different delimiters
+        for cell in row:
             try:
                 if cell.value.split(','):
                     for i in cell.value.split(','):
@@ -311,7 +314,7 @@ def port_number(ss):
         cell_values=set(cell_values)
         cell_values.remove('None')
         apps_found={}
-        for prevsymbol in cell_values: #looping each port in cell_values list
+        for prevsymbol in cell_values:
             if prevsymbol!=None:
                 prevsymbol=str(prevsymbol)
                 for key,value in common_apps.items():
