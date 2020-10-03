@@ -16,7 +16,7 @@ my_label.pack()
 def myClick():
     global counter
     counter+=1
-
+    #s= <api call happening, this is already in place>
     mylabel = Label(root, text=str(counter)+' '+'You Entered:'\
                                +input_box.get()+'\nRequestor'+' '+str(s)+'\n')
     mylabel.pack()
