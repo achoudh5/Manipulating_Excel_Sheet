@@ -1,4 +1,5 @@
 from tkinter import *
+#import <api>
 from PIL import ImageTk, Image
 root = Tk()
 
@@ -16,7 +17,7 @@ my_label.pack()
 def myClick():
     global counter
     counter+=1
-    #s= <api call happening, this is already in place>
+    #s= <api call happening, this is already in place, check import>
     mylabel = Label(root, text=str(counter)+' '+'You Entered:'\
                                +input_box.get()+'\nRequestor'+' '+str(s)+'\n')
     mylabel.pack()
