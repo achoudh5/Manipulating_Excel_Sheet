@@ -2,8 +2,12 @@
   The person who owns this repo is mere face of it, it's you who are making a difference! Keep contributing :)
   **Please make a comment if you see I am missing any tag or label which might miss your contribution, I don't want that to happen that was the whole point.**
   - Shout out to [Ishita Mehta](https://github.com/Ishita-Mehta) for pointing out some missing labels!
+  
+# ![GitHub labels](https://img.shields.io/github/labels/achoudh5/Manipulating_Excel_Sheet/Hacktoberfest?style=for-the-badge)
 
-![test](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/images/Screen%20Shot%202020-10-03%20at%201.19.35%20AM.png)
+
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/achoudh5/Manipulating_Excel_Sheet?color=florescent%20green) ![GitHub issues](https://img.shields.io/github/issues/achoudh5/Manipulating_Excel_Sheet?color=red)
+<!--![test](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/images/Screen%20Shot%202020-10-03%20at%201.19.35%20AM.png)-->
 # Manipulating_Excel_Sheet :file_folder:
   - I am all ears to suggestions, don't hesitate to suggest
   
