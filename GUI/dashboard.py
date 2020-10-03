@@ -10,9 +10,9 @@ canvas1.pack()
 # The Canvas is your display where you can place items, such as entry boxes, buttons, charts and more.
 # You can control the dimensions of your Canvas by changing the width and height values:
 
-my_img = ImageTk.PhotoImage(Image.open("../images/Screen Shot 2020-10-03 at 1.19.35 AM.png"))
-my_label = Label(image=my_img)
-my_label.pack()
+#my_img = ImageTk.PhotoImage(Image.open("../images/Screen Shot 2020-10-03 at 1.19.35 AM.png"))
+#my_label = Label(image=my_img)
+#my_label.pack()
 
 def myClick():
     global counter
