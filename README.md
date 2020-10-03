@@ -14,6 +14,7 @@
   - I am all ears to suggestions, don't hesitate to suggest
   
 # All files below are samples only
+![](https://media.giphy.com/media/QnbnVPVWhzbCE/giphy.gif)
 
 ##### The name and position of columns will be same, don't worry about it but it would be great if you can identify the heading from row 1 and use from that perspective
 
@@ -31,6 +32,7 @@
 
 ![Sample_Gui](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/GUI/sample_gui.png)
 
-## Raise a PR :rocket: and get [Hacktoberfest 2020](https://hacktoberfest.digitalocean.com/) T-Shirt :smile: 
-## Thank you for your contribution :clap:
-## Do Star :star: this repository
+### Raise a PR :rocket: and get [Hacktoberfest 2020](https://hacktoberfest.digitalocean.com/) T-Shirt :smile: 
+### Thank you for your contribution :clap:
+### Do Star :star: this repository
+![](https://media.giphy.com/media/USV0ym3bVWQJJmNu3N/giphy.gif)
