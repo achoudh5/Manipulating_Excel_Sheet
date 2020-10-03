@@ -21,6 +21,9 @@
 
 [Hackoberfest_Database.xlsx](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/%20Hacktoberfest_database.xlsx)
 
+## Sample GUI using tKinter
+
+![Sample_Gui](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/GUI/sample_gui.png)
 
 ## Raise a PR :rocket: and get [Hacktoberfest 2020](https://hacktoberfest.digitalocean.com/) T-Shirt :smile: 
 ## Thank you for your contribution :clap:
