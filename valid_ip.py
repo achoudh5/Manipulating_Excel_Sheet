@@ -1,8 +1,8 @@
 import openpyxl
 import ipaddress  # included in Python 3
 
-i=input('Enter the name of file:\nMake sure the file is in the same folder as this python file, \
-otherwise input the file address as "C:/Users/Lenovo/Downloads/workbook.xlsx"\n')
+#i=input('Enter the name of file:\nMake sure the file is in the same folder as this python file, \
+#otherwise input the file address as "C:/Users/Lenovo/Downloads/workbook.xlsx"\n')
 
 wb = openpyxl.load_workbook(i)
 
