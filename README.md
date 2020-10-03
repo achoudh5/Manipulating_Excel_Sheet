@@ -13,7 +13,7 @@
 [Hacktoberfest_Expected_Outcome.xlsx](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/Hacktoberfest_Expected_Ouputt.xlsx)
 
 
-[Hackoberfest_Database.slsx](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/%20Hacktoberfest_database.xlsx)
+[Hackoberfest_Database.xlsx](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/%20Hacktoberfest_database.xlsx)
 
 
 ## Raise a PR :rocket: and get [Hacktoberfest 2020](https://hacktoberfest.digitalocean.com/) T-Shirt :smile: 
