@@ -1,6 +1,7 @@
 ![test](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/images/Screen%20Shot%202020-10-03%20at%201.19.35%20AM.png)
 # Manipulating_Excel_Sheet :file_folder:
-
+  - I am all ears to suggestions, don't hesitate to suggest
+  
 # All files below are samples only
 
 ##### The name and position of columns will be same, don't worry about it but it would be great if you can identify the heading from row 1 and use from that perspective
