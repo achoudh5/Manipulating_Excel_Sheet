@@ -49,10 +49,10 @@ style.layout("My.Vertical.TScrollbar",
 # Copy original style configuration and add our new custom configuration option.
 style.configure("My.Vertical.TScrollbar", troughcolor="black")
 
-my_scrollbar = ttk.Scrollbar(main_frame, orient=VERTICAL, command = my_canvas.yview, style="My.Vertical.TScrollbar")
-my_scrollbar.pack(side=RIGHT, fill=Y)
+my_scrollbar_ver = ttk.Scrollbar(main_frame, orient=VERTICAL, command = my_canvas.yview, style="My.Vertical.TScrollbar")
+my_scrollbar_ver.pack(side=RIGHT, fill=Y)
 
-my_canvas.configure(yscrollcommand=my_scrollbar.set)
+my_canvas.configure(yscrollcommand=my_scrollbar_ver.set)
 my_canvas.bind('<Configure>', lambda e: my_canvas.configure(scrollregion = my_canvas.bbox("all")))
 
 # this second_frame is the new 'root' now.
@@ -129,9 +129,10 @@ def myClick():
     global counter
     counter+=1
     #s= <api call happening, this is already in place, check import>
-    mylabel = Label(second_frame, text=str(counter)+' '+'You Entered:'\
-                               +input_box.get()+'\nRequestor'+' '+str(s)+'\n')
-    mylabel.grid()
+    s="abcd@gmail.com"  # for testing purposes
+    mylabel = Label(second_frame, text=str(counter)+' '+'You Entered: '\
+                               +input_box.get()+'\nRequestor: '+' '+str(s)+'\n')
+    mylabel.grid(column=3, row=6)
     input_box.delete(0, END)
 
 #counts how many time you used this tool to check validity
