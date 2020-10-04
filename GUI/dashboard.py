@@ -1,4 +1,5 @@
 from tkinter import *
+#import <api>
 from PIL import ImageTk, Image
 root = Tk()
 
@@ -9,14 +10,14 @@ canvas1.pack()
 # The Canvas is your display where you can place items, such as entry boxes, buttons, charts and more.
 # You can control the dimensions of your Canvas by changing the width and height values:
 
-my_img = ImageTk.PhotoImage(Image.open("../images/Screen Shot 2020-10-03 at 1.19.35 AM.png"))
-my_label = Label(image=my_img)
-my_label.pack()
+#my_img = ImageTk.PhotoImage(Image.open("../images/Screen Shot 2020-10-03 at 1.19.35 AM.png"))
+#my_label = Label(image=my_img)
+#my_label.pack()
 
 def myClick():
     global counter
     counter+=1
-
+    #s= <api call happening, this is already in place, check import>
     mylabel = Label(root, text=str(counter)+' '+'You Entered:'\
                                +input_box.get()+'\nRequestor'+' '+str(s)+'\n')
     mylabel.pack()
