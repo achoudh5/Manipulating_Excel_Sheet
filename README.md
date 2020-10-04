@@ -27,6 +27,15 @@
 
 
 [Hackoberfest_Database.xlsx](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/%20Hacktoberfest_database.xlsx)
+## Sample of how zip.py is working currently
+  - Each **Arrow** represents anomaly from expected output (check below image)
+
+  - Each **number** represents an **issue faced**, you can create an issue and raise a **PR!**
+  
+![Currently](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/images/Expected.png)
+
+## Expected of zip.py
+![Expected](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/images/Currently.png)
 
 ## Sample GUI using tKinter
 
