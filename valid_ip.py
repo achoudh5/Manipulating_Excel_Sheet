@@ -4,9 +4,6 @@ import ipaddress  # included in Python 3
 #i=input('Enter the name of file:\nMake sure the file is in the same folder as this python file, \
 #otherwise input the file address as "C:/Users/Lenovo/Downloads/workbook.xlsx"\n')
 
-wb = openpyxl.load_workbook(i)
-
-ws = wb['Sheet1']
 
 # function to validate a IP address.
 def is_valid(ip):
@@ -65,6 +62,10 @@ def add_process(s):
 # Driving Code
 if __name__ == "__main__":
     
+    wb = openpyxl.load_workbook(i)
+
+    ws = wb['Sheet1']
+
     col=[3,5]   # INPUT. A list containing the indices of the
                 # columns, which needs to be checked for the
                 # IP adresses.
