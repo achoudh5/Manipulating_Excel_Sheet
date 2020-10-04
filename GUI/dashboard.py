@@ -106,6 +106,20 @@ def fileDialog():
 
 		label_3.config(text="Some Error occured. Confirm the sheet number in the particular file or check the file format (.xlsx).")
 
+def chng_img():
+	try:
+		filename = filedialog.askopenfilename(initialdir = "/", title = "Select an Image File", filetype = (("png", "*.png"), ("All Files", "*.*")))
+		
+		image1 = Image.open(filename)
+		# The (490, 390) is (height, width)
+		image1 = image1.resize((490, 390))
+		my_img1 = ImageTk.PhotoImage(image1)
+		my_label.config(image=my_img1)
+		my_label.image = my_img1
+
+	except:
+		pass
+
 ########## original dashbboard code STARTS
 
 
@@ -118,8 +132,8 @@ def fileDialog():
 # my_img = ImageTk.PhotoImage(Image.open("../images/Screen Shot 2020-10-03 at 1.19.35 AM.png"))
 
 image = Image.open('../images/Screen Shot 2020-10-03 at 1.19.35 AM.png')
-# The (450, 350) is (height, width)
-image = image.resize((490, 390), Image. ANTIALIAS)
+# The (490, 390) is (height, width)
+image = image.resize((490, 390))
 my_img = ImageTk.PhotoImage(image)
 
 my_label = Label(second_frame,image=my_img)
@@ -137,6 +151,9 @@ def myClick():
 
 #counts how many time you used this tool to check validity
 counter=0
+
+chng_btn = Button(second_frame,text="Change the Image!",command= chng_img, bg='brown', fg='white', font=('helvetica', 9, 'bold'), cursor="hand2")
+chng_btn.grid(column=2)
 
 #An input_box can be used to get the user’s input
 input_box = Entry(second_frame, width=40, bg='#30CFBB', fg='black', selectforeground='red',selectbackground='white',borderwidth=5)
