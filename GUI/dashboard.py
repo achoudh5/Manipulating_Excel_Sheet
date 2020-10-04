@@ -139,14 +139,20 @@ my_img = ImageTk.PhotoImage(image)
 my_label = Label(second_frame,image=my_img)
 my_label.grid(column=2, row=1)
 
+lis=[]
+
 def myClick():
     global counter
     counter+=1
     #s= <api call happening, this is already in place, check import>
     s="abcd@gmail.com"  # for testing purposes
-    mylabel = Label(second_frame, text=str(counter)+' '+'You Entered: '\
-                               +input_box.get()+'\nRequestor: '+' '+str(s)+'\n')
-    mylabel.grid(column=3, row=5+counter)
+    txt = str(counter)+' '+'You Entered: '+input_box.get()+'\nRequestor: '+' '+str(s)+'\n'
+    lis.append(txt)
+
+    for i in range(5, 5+counter):
+
+	    mylabel = Label(second_frame, text=lis[i-5])
+	    mylabel.grid(column=3, row=i+1)
     input_box.delete(0, END)
 
 #counts how many time you used this tool to check validity
