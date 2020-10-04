@@ -7,6 +7,14 @@
 
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/achoudh5/Manipulating_Excel_Sheet?color=florescent%20green) ![GitHub issues](https://img.shields.io/github/issues/achoudh5/Manipulating_Excel_Sheet?color=red)
 <!--![test](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/images/Screen%20Shot%202020-10-03%20at%201.19.35%20AM.png)-->
+
+# Change the state of your Issue (keep it professional)
+
+[Join my ZenHub](https://app.zenhub.com/workspaces/hacktoberfest-2020-5f7a0f7702a0990012ca8872/board)
+
+
+[Add Plugin Zenhub](https://chrome.google.com/webstore/detail/zenhub-for-github/ogcgkffhplmphkaahpmffcafajaocjbd/related)
+
 # Manipulating_Excel_Sheet :file_folder:
   - Being a **Network Security Professional**, I am currently working on this exciting project which makes the NetOps work easy
   - Challenge is to make the users use a tool which is easy to navigate considering they don't have software mindset! 
