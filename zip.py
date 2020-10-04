@@ -19,11 +19,16 @@ from openpyxl.utils.cell import get_column_letter
 ab = 1.2
 
 # Sheet 1 subnets
-c_green_a = [0, 1, 2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 91, 92, 93, 94, 96, 97,
-             98, 99, 100, 101, 102, 103, 104, 108]
+c_green_a = [0, 1, 2, 3, 4, 13, 14, 15, 16, 17, 
+            18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 
+            28, 29, 91, 92, 93, 94, 96, 97,
+            98, 99, 100, 101, 102, 103, 104, 108]
+
 c_grey_a = [42, 43, 120, 121]
 c_yellow_a = [11, 12, 89, 90]
-c_dict_a = {'green': c_green_a, 'grey': c_grey_a, 'yellow': c_yellow_a}
+c_dict_a = {'green': c_green_a, 
+            'grey': c_grey_a, 
+            'yellow': c_yellow_a}
 d_green_41_95_start_a = 128
 d_green_41_95_end_a = 255
 d_grey_44_start_a = 0
@@ -32,7 +37,8 @@ d_grey_122_start_a = 0
 d_grey_122_end_a = 95
 
 # Sheet2 subnets
-c_green_b = [141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 169]
+c_green_b = [141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 
+            152, 153, 154, 155, 156, 157, 169]
 c_grey_b = [170, 171, 172]
 c_yellow_b = [139, 140]
 c_dict_b = {'green': c_green_b, 'grey': c_grey_b, 'yellow': c_yellow_b}
@@ -46,17 +52,19 @@ d_grey_172_2_end_b = 159
 bluezone = ['bluezone', 'Bluezone']
 
 common_apps = {
-    'ssl': '443', 'web-browsing': '80', 'dns': '53', 'ftp': '21', 'ssh': '22', 'netbios-ss': '139',
-    'snmp': '161', 'ms-rdp': '3389', 'socks': '1080', 'ntp': '123', 'tacacs': '49', 'telnet': '23', 'portmapper': '111',
-    'nfs': '2049', 'mysql': '3306', 'wins': '42', 'rdp2tcp': '3389', 'lotus-notes-base': '1352', 'smtp': '25'
-}
+    'ssl': '443', 'web-browsing': '80', 'dns': '53', 'ftp': '21', 'ssh': '22', 
+    'netbios-ss': '139', 'snmp': '161', 'ms-rdp': '3389', 'socks': '1080',
+    'ntp': '123', 'tacacs': '49', 'telnet': '23', 'portmapper': '111',
+    'nfs': '2049', 'mysql': '3306', 'wins': '42', 'rdp2tcp': '3389',
+    'lotus-notes-base': '1352', 'smtp': '25' }
 
 common_apps_list = {
-    'ldap': ['389', '3268', '3269', '636'], 'db2': ['50000', '60000'], 'ms-ds-smb': ['139', '445'],
-    'kerberos': ['88', '464', '749', '750', '754'], 'ms-netlogon': ['1025-5000', '49152-65535', '137', '138'],
+    'ldap': ['389', '3268', '3269', '636'], 'db2': ['50000', '60000'],
+    'ms-ds-smb': ['139', '445'], 
+    'kerberos': ['88', '464', '749', '750', '754'],
+    'ms-netlogon': ['1025-5000', '49152-65535', '137', '138'],
     'WinRM': ['5985', '5986'],
-    'windows-remote-management': ['5985', '5986']
-}
+    'windows-remote-management': ['5985', '5986']}
 
 
 def get_key(val, search_dict):
