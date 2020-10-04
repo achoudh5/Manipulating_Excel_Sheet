@@ -3,6 +3,7 @@
   The person who owns this repo is mere face of it, it's you who are making a difference! Keep contributing :)
   **Please make a comment if you see I am missing any tag or label which might miss your contribution, I don't want that to happen that was the whole point.**
   - Shout out to [Ishita Mehta](https://github.com/Ishita-Mehta) for pointing out some missing labels!
+  - Add yourself to [Hall of fame](https://github.com/achoudh5/Manipulating_Excel_Sheet/edit/main/CONTRIBUTING.md)
 
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/achoudh5/Manipulating_Excel_Sheet?color=florescent%20green) ![GitHub issues](https://img.shields.io/github/issues/achoudh5/Manipulating_Excel_Sheet?color=red)
 <!--![test](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/images/Screen%20Shot%202020-10-03%20at%201.19.35%20AM.png)-->
@@ -40,7 +41,7 @@
 ## Sample GUI using tKinter
 
 ![Sample_Gui](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/GUI/sample_gui.png)
-## Add yourself to [Hall of fame](https://github.com/achoudh5/Manipulating_Excel_Sheet/edit/main/CONTRIBUTING.md)
+
 ### Raise a PR :rocket: and get [Hacktoberfest 2020](https://hacktoberfest.digitalocean.com/) T-Shirt :smile: 
 ### Thank you for your contribution :clap:
 ### Do Star :star: this repository
