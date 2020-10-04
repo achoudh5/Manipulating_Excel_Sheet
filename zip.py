@@ -186,13 +186,11 @@ def parse_user_input(ss):
 
 
 def color_ip(prevsymbol, cell):
-	"""
-    Colors the ip based on zone
-	Input: 
-    prevsymbol : The symbol
-    cell: The cell to be filled
-    Output: None
-    """
+# """ Colors the ip based on zone
+# Input: 
+# prevsymbol : The symbol
+# cell: The cell to be filled
+# Output: None """
     if prevsymbol != None:
         if (prevsymbol.lower()) == "green":
             cell.fill = PatternFill(fgColor="0080FF00", fill_type="solid")
@@ -274,10 +272,10 @@ def app_name(ss):
 
 # try to put the App:port in the same row where the corresponding app and port are found, I have just made a new row and added from top ie row 1
 def port_number(ss):
-	"""
-	Input: Spreadsheet
-    Output: None (Saves spreadsheet)
-    """
+	# """
+	# Input: Spreadsheet
+ #    Output: None (Saves spreadsheet)
+ #    """
     load_spreadsheet = openpyxl.load_workbook(ss)
     sheet = load_spreadsheet['Sheet1']
     for i in range(7, 8):
@@ -341,7 +339,7 @@ def port_number(ss):
     load_spreadsheet.save(ss)
 
 
-def main():
+def main(y, x=1):
     # a.b.c.d-> ip format
     # Sheet1 subnets
 
@@ -351,8 +349,12 @@ def main():
 
     global inp
 
-    inp = input('Which Device? Type 1 for sheet1 or 2 for sheet2 :\n')
-    ss_inp = input('Enter the path to excel sheet\n')
+    # inp = input('Which Device? Type 1 for sheet1 or 2 for sheet2 :\n')
+    # ss_inp = input('Enter the path to excel sheet\n')
+
+    inp = x
+    ss_inp = y
+
     parse_user_input(ss_inp)
 
     zone(ss_inp)
