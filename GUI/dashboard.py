@@ -132,7 +132,7 @@ def myClick():
     s="abcd@gmail.com"  # for testing purposes
     mylabel = Label(second_frame, text=str(counter)+' '+'You Entered: '\
                                +input_box.get()+'\nRequestor: '+' '+str(s)+'\n')
-    mylabel.grid(column=3, row=6)
+    mylabel.grid(column=3, row=5+counter)
     input_box.delete(0, END)
 
 #counts how many time you used this tool to check validity
