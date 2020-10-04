@@ -51,10 +51,10 @@ def fileDialog():
 
 	try:
 
-		# if int(e.get()).isnumeric():
-		# 	main(filename, e.get())
-		# else:
-		# 	raise ValueError
+		if e.get().isnumeric():
+			main(filename, int(e.get()))
+		else:
+			raise ValueError
 
 		wb = load_workbook(filename)
 		sh = "Sheet"
