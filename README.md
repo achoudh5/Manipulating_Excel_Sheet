@@ -40,7 +40,7 @@
 ## Sample GUI using tKinter
 
 ![Sample_Gui](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/GUI/sample_gui.png)
-
+## Add yourself to [Hall of fame](https://github.com/achoudh5/Manipulating_Excel_Sheet/edit/main/CONTRIBUTING.md)
 ### Raise a PR :rocket: and get [Hacktoberfest 2020](https://hacktoberfest.digitalocean.com/) T-Shirt :smile: 
 ### Thank you for your contribution :clap:
 ### Do Star :star: this repository
