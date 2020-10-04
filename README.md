@@ -44,11 +44,25 @@
 ![Currently](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/images/Expected.png)
 
 ## Expected of zip.py
+
 ![Expected](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/images/Currently.png)
 
-## Sample GUI using tKinter
+## Sample Expectation of GUI
 
 ![Sample_Gui](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/GUI/sample_gui.png)
+
+## Current GUI using tKinter on Windows and MAC
+
+##### Windows GUI
+
+![Curr-Wind](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/images/WINDOWS_GUI.png)
+
+
+![Curr-Win](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/images/WINDOWS_GUI_2.png)
+
+##### MAC GUI (Needs Help)
+
+![Current-MAC](https://github.com/achoudh5/Manipulating_Excel_Sheet/blob/main/images/MAC_GUI.png)
 
 ## No contribution is small,don't forget to update `Contributing.md` file
 ### Raise a PR :rocket: and get [Hacktoberfest 2020](https://hacktoberfest.digitalocean.com/) T-Shirt :smile: 
