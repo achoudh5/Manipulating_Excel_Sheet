@@ -151,7 +151,7 @@ def myClick():
 
     for i in range(5, 5+counter):
 
-	    mylabel = Label(second_frame, text=lis[i-5])
+	    mylabel = Label(second_frame, text=lis[4-i])
 	    mylabel.grid(column=3, row=i+1)
     input_box.delete(0, END)
 
