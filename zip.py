@@ -194,14 +194,14 @@ def parse_user_input(ss):
 
 
 def color_ip(prevsymbol, cell):
-	"""
+    """
     Colors the ip based on zone
-	Input: 
+    Input: 
     prevsymbol : The symbol
     cell: The cell to be filled
     Output: None
     """
-    if prevsymbol != None:
+    if not (prevsymbol is None):
         if (prevsymbol.lower()) == "green":
             cell.fill = PatternFill(fgColor="0080FF00", fill_type="solid")
         if (prevsymbol.lower()) == "blue":
@@ -282,8 +282,8 @@ def app_name(ss):
 
 # try to put the App:port in the same row where the corresponding app and port are found, I have just made a new row and added from top ie row 1
 def port_number(ss):
-	"""
-	Input: Spreadsheet
+    """
+    Input: Spreadsheet
     Output: None (Saves spreadsheet)
     """
     load_spreadsheet = openpyxl.load_workbook(ss)
