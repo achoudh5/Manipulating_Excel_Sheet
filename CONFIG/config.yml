@@ -1,3 +1,17 @@
+#Process to consume the config file
+#The idea behind introducing a config file is to have the following features
+
+#Any change to the data, source of data will be done over here without disturbing the codebase
+#While creating an object of the class, these values will be initiated in default constructor init(), so that any instance of the class will have these as defaults and can be over ridden if required
+#Example to consume
+
+#classs network_alloc():
+#def init(self):
+#with open(.config.config.yml) as config_file:
+#self.object_config = yaml.load(config_file, Loader=yaml.FullLoader)
+#self.c_green_a = self.object_config['network']['subnet']['first_sheet']['c_green_a']
+#self.c_grey_a = self.object_config['network']['subnet']['first_sheet']['c_grey_a']
+
 network:
   subnet:
     first_sheet:
