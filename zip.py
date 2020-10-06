@@ -349,7 +349,7 @@ def port_number(ss):
     load_spreadsheet.save(ss)
 
 
-def main():
+def main(y, x=1):
     # a.b.c.d-> ip format
     # Sheet1 subnets
 
@@ -359,8 +359,12 @@ def main():
 
     global inp
 
-    inp = input('Which Device? Type 1 for sheet1 or 2 for sheet2 :\n')
-    ss_inp = input('Enter the path to excel sheet\n')
+    # inp = input('Which Device? Type 1 for sheet1 or 2 for sheet2 :\n')
+    # ss_inp = input('Enter the path to excel sheet\n')
+
+    inp = x
+    ss_inp = y
+
     parse_user_input(ss_inp)
 
     zone(ss_inp)
