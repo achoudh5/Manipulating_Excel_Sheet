@@ -174,11 +174,12 @@ Next up, you’ll have to specify a new remote upstream repository for us to syn
 
 ![screenshot 74](https://user-images.githubusercontent.com/37223446/47235672-5f0efa00-d3f7-11e8-9e45-1af02d8b969b.png)
 
-In this example, // upstream // is the shortname we have supplied for the remote repository since in terms of Git, “upstream” refers to the repository that you cloned from. If you want to add a remote pointer to the repository of a collaborator, you may want to provide that collaborator’s username or a shortened nickname for the shortname.
+_In this example, // upstream // is the shortname we have supplied for the remote repository since in terms of Git, “upstream” refers to the repository that you cloned from. If you want to add a remote pointer to the repository of a collaborator, you may want to provide that collaborator’s username or a shortened nickname for the shortname._
 
 ### 7. Sync the Fork
 
 Once you have configured a remote that references the upstream and original repository on GitHub, you are ready to sync your fork of the repository to keep it up-to-date.
+
 To sync your fork, from the directory of your local repository in a terminal window, you’ll have to use the // git fetch // command to fetch the branches along with their respective commits from the upstream repository. Since you used the shortname “upstream” to refer to the upstream repository, you’ll have to pass that to the command:
 
 ##### `git fetch upstream`
