@@ -1,3 +1,7 @@
 tkinter
 Pillow
 openpyxl
+matplotlib
+pprint
+pandas
+collections
