@@ -5,6 +5,7 @@ import valid_ip  # imported module valid_ip.py
 from openpyxl.styles import PatternFill, Font
 # from openpyxl.styles import *
 from openpyxl.utils.cell import get_column_letter
+from sort_excel.excel_sorter import sort_file
 
 ab = 1.2
 c_green_a = [0, 1, 2, 3, 4, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 91, 92, 93, 94, 96, 97,
@@ -344,6 +345,8 @@ def main():
 
     zone(ss_inp)
     port_number(ss_inp)
+    
+    sort_file('Hacktoberfest_Inputt.xlsx')
 
     # app_name(ss_inp)
 if __name__ == "__main__":
