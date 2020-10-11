@@ -2,30 +2,52 @@
 # each relation
 
 import pandas as pd
+import networkx as nx
 import matplotlib.pyplot as plt
 from pprint import pprint
 from collections import Counter
 
-df = pd.read_excel('Hacktoberfest_Inputt.xlsx').to_dict()
 
-rows = list(df['Source Color'].keys())
 
-valuesSc = list(df['Source Color'].values())    #Source colors
-valuesDc = list(df['Dest color'].values())      #Destination colors
+def visualiser(fileName):
+    df = pd.read_excel(fileName).to_dict()
+    # pprint(df)
+    rows = list(df['Source Color'].keys())
 
-# Zone relations
-relations = []
+    column_A = list(df['Source Color'].values())    #Source colors
+    column_B = list(df['Dest color'].values())      #Destination colors
 
-for i in rows:
-    relations.append((str(valuesSc[i])+' -> '+str(valuesDc[i])))
-# print(relations)
+    # Zone relations
+    relations = []
 
-# Associating the relations with their occurences
-relationFlow = Counter(relations)
-# pprint(relationFlow)
+    # Relations from to column 1 to column 2 for the directed graph
+    relG = {'from':[],'to':[]}
 
-# A scatter plot to show the occurences
-x,y = zip(*relationFlow.items())
-plt.scatter(x,y)
-# plt.plot(x,y)
-plt.show()
+    # Colors available
+    colors=['blue','brown','green','grey','red','orange','yellow']
+
+    for i in rows:
+        if (str(column_A[i])).lower() in colors:
+            # relations.append((str(valuesSc[i])+' -> '+str(valuesDc[i])))
+            
+            relG['from'].append(str(column_A[i]))
+            relG['to'].append(str(column_B[i]))
+    # print(relations)
+
+    # # Associating the relations with their occurences
+    # relationFlow = Counter(relations)
+    # # pprint(relationFlow)
+
+    # # A scatter plot to show the occurences
+    # x,y = zip(*relationFlow.items())
+    # plt.scatter(x,y)
+    # plt.plot(x,y)
+    # plt.show()
+
+    # Creating a directed graph with column1 and column2 as nodes
+    G = nx.from_pandas_edgelist(relG,'from','to',create_using=nx.DiGraph())
+    nx.draw(G,  with_labels=True)
+    plt.show()
+
+if __name__ == "__main__":
+    visualiser('Hacktoberfest_Inputt.xlsx')
