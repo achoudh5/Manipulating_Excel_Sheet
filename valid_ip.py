@@ -6,9 +6,6 @@ from pprint import pprint   #to print in a human readable format
 #otherwise input the file address as "C:/Users/Lenovo/Downloads/workbook.xlsx"\n')
 i = ('Hacktoberfest_Inputt.xlsx')
 
-wb = openpyxl.load_workbook(i)
-
-ws = wb['Sheet1']
 
 # function to validate a IP address.
 def is_valid(ip):
@@ -67,6 +64,10 @@ def add_process(s):
 # Driving Code
 if __name__ == "__main__":
     
+    wb = openpyxl.load_workbook(i)
+
+    ws = wb['Sheet1']
+
     col=[3,5]   # INPUT. A list containing the indices of the
                 # columns, which needs to be checked for the
                 # IP adresses.
