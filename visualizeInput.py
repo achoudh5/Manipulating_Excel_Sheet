@@ -46,7 +46,11 @@ def visualiser(fileName):
 
     # Creating a directed graph with column1 and column2 as nodes
     G = nx.from_pandas_edgelist(relG,'from','to',create_using=nx.DiGraph())
-    nx.draw(G,  with_labels=True)
+    nodeColors=[]
+    myPos = nx.spring_layout(G, seed=2)
+    for node in G:
+        nodeColors.append(node)
+    nx.draw_networkx(G,pos=myPos, node_color= nodeColors,  with_labels=True)
     plt.show()
 
 if __name__ == "__main__":
