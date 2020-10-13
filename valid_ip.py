@@ -1,8 +1,10 @@
 import openpyxl
 import ipaddress  # included in Python 3
+from pprint import pprint   #to print in a human readable format
 
-#i=input('Enter the name of file:\nMake sure the file is in the same folder as this python file, \
+# i=input('Enter the name of file:\nMake sure the file is in the same folder as this python file, \
 #otherwise input the file address as "C:/Users/Lenovo/Downloads/workbook.xlsx"\n')
+i = ('Hacktoberfest_Inputt.xlsx')
 
 
 # function to validate a IP address.
@@ -98,10 +100,11 @@ if __name__ == "__main__":
  
         if not found:
             dic = {}
-            for j in col:
-                dic[add_process(ws[1][j].value)] = add_process(ws[i][j].value)
+            for j in range(0,len(col)-1,2):
+                # dic[add_process(ws[1][j].value)] = [add_process(ws[i][j].value)]
+                dic[add_process(ws[i][col[j]].value)] = [add_process(ws[i][col[j+1]].value)]
             lis.append(dic)
-    
+        # print("next loop")
     print(" ")
     
-    print(lis)
+    pprint(lis)
