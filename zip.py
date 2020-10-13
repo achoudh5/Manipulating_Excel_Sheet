@@ -15,6 +15,7 @@ import openpyxl
 import valid_ip
 from openpyxl.styles import PatternFill, Font
 from openpyxl.utils.cell import get_column_letter
+from sort_excel.excel_sorter import sort_file
 
 ab = 1.2
 
@@ -369,6 +370,8 @@ def main(y, x=1):
 
     zone(ss_inp)
     port_number(ss_inp)
+    
+    sort_file('Hacktoberfest_Inputt.xlsx')
 
     # app_name(ss_inp)
 if __name__ == "__main__":
